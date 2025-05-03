@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Numerology Angel Reader</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+      color: #4b0082;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      background: #ffffffcc;
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      animation: floatIn 1.2s ease-out;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 1.8em;
+      color: #5e239d;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 1.2em;
+      min-height: 100px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button {
+      background: #9c27b0;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(156, 39, 176, 0.4);
+    }
+
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Numerology Angel Reading</h1>
+    <button onclick="rollReading()">Roll Reading</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    const readings = [
+      { number: 111, message: "You are aligned with your higher self. Stay positive and manifest your thoughts." },
+      { number: 222, message: "Balance and harmony are on their way. Trust the process." },
+      { number: 333, message: "Your angels are near, supporting you through life’s journey." },
+      { number: 444, message: "You are protected. Trust the path you're on." },
+      { number: 555, message: "Big changes are coming. Embrace the transformation." },
+      { number: 666, message: "Focus on spiritual growth, not material fears." },
+      { number: 777, message: "You're on the right path. Divine guidance is present." },
+      { number: 888, message: "Abundance is flowing your way. Be ready to receive." },
+      { number: 999, message: "A cycle is ending. Let go and make room for new beginnings." },
+      { number: 1010, message: "Stay focused on your intentions and trust divine timing." }
+    ];
+
+    function rollReading() {
+      const random = readings[Math.floor(Math.random() * readings.length)];
+      const msgDiv = document.getElementById("message");
+      msgDiv.innerHTML = `<strong>Angel Number ${random.number}:</strong><br>${random.message}`;
+    }
+  </script>
+</body>
+</html>
